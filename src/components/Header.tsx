@@ -11,11 +11,18 @@ import {
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import fotoImg from '../assets/robson.png';
+import iconImg from '../assets/icon.png';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
+import { RectButtonProps } from 'react-native-gesture-handler';
 
-export function Header() {
-    const [usernName, setUserName] = useState<string>();
+interface HeaderProps extends RectButtonProps {
+    title?: string;
+    subtitle?: string;
+}
+
+export function Header({ title = '', subtitle = '', ...rest }: HeaderProps) {
+    const [userName, setUserName] = useState<string>();
 
     useEffect(() => {
         async function loadStoregeUserName() {
@@ -30,12 +37,13 @@ export function Header() {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.greenting}>Olá,</Text>
+                <Text style={styles.greenting}>
+                    {(title === '') ? 'Olá,' : title}</Text>
                 <Text style={styles.userName}>
-                    {usernName}
+                    {(subtitle === '') ? userName : subtitle}
                 </Text>
             </View>
-            <Image source={fotoImg} style={styles.image} />
+            <Image source={(userName === 'Robson!') ? fotoImg : iconImg} style={styles.image} />
         </View>
 
     )

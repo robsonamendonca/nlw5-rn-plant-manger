@@ -11,20 +11,25 @@ import { Header } from '../components/Header';
 import waterdrop from '../assets/waterdrop.png';
 import colors from '../styles/colors';
 import { FlatList } from 'react-native-gesture-handler';
-import { loadPlant, PlantProps, removePlant, StoragePlantProps } from '../libs/storage';
+import { loadPlant, PlantProps, removePlant } from '../libs/storage';
 import { pt } from 'date-fns/locale';
 import { formatDistance } from 'date-fns';
 import fonts from '../styles/fonts';
 import { PlantCardSecundary } from '../components/PlantCardSecundary';
 import { Load } from '../components/Load';
 import { Alert } from 'react-native';
-import { AsyncStorage } from 'react-native';
+import { ButtonBack } from '../components/ButtonBack';
+import { useNavigation } from '@react-navigation/native';
 
 export function MyPlants() {
     const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
     const [loading, setLoading] = useState(true);
     const [nextWaterd, setNextWaterd] = useState<string>();
 
+    const navigation = useNavigation();
+    function handleMoveBack() {
+        navigation.navigate('PlantSelect');
+    }
     function handleRemove(plant: PlantProps) {
         Alert.alert('Remover', `Deseja remover a ${plant.name}?`,
             [
@@ -62,7 +67,7 @@ export function MyPlants() {
                 { locale: pt }
             );
             setNextWaterd(
-                `Não esqueça de regar a ${plantsStoreged[0].name} à ${nextTime} horas.`
+                `Não esqueça de regar a ${plantsStoreged[0].name} à ${nextTime}.`
             )
 
             setMyPlants(plantsStoreged);
@@ -81,7 +86,8 @@ export function MyPlants() {
     return (
 
         <View style={styles.container}>
-            <Header />
+
+            <Header title='Minhas' subtitle='Plantinhas' />
 
             <View style={styles.spotLight}>
                 <Image
@@ -121,16 +127,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         paddingHorizontal: 30,
-        paddingTop: 50,
+        paddingTop: 8,
         backgroundColor: colors.background
     },
     spotLight: {
         backgroundColor: colors.blue_light,
         paddingHorizontal: 20,
         borderRadius: 20,
-        height: 110,
+        height: 90,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -150,9 +156,10 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     plantsTitle: {
-        fontSize: 24,
+        fontSize: 22,
         fontFamily: fonts.heading,
         color: colors.heading,
-        marginVertical: 20,
+        marginVertical: 7,
     },
+
 })

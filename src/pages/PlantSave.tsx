@@ -23,8 +23,9 @@ import fonts from '../styles/fonts';
 import { useState } from 'react';
 import { format, isBefore } from 'date-fns';
 import { loadPlant, PlantProps, savePlant } from '../libs/storage';
-import { loadAsync } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
+import { ButtonBack } from '../components/ButtonBack';
 
 interface Params {
     plant: PlantProps
@@ -37,6 +38,10 @@ export function PlantSave() {
 
     const route = useRoute();
     const { plant } = route.params as Params;
+
+    function handleMoveBack() {
+        navigation.navigate('PlantSelect');
+    }
 
     function handleOpenDateTimePickerForAndroid() {
         setShowDatePicker(oldState => !oldState);
@@ -68,7 +73,7 @@ export function PlantSave() {
             navigation.navigate('Confirmation', {
                 title: 'Tudo certo',
                 subtitle: 'Fique, tranquilo que sempre vamos lembrar você de cuidar das suas plantinhas com mutio cuidado.',
-                buttonTitle: 'Muito obrigado :D',
+                buttonTitle: 'Muito obrigado 🤙🏼',
                 icon: 'hug',
                 nextScreen: 'MyPlants'
             });
@@ -83,12 +88,15 @@ export function PlantSave() {
             showsVerticalScrollIndicator={false}
             contentContainerStyle={styles.container}
         >
+            <ButtonBack handleMoveBack={handleMoveBack} />
+
             <View style={styles.container}>
+
                 <View style={styles.plantInfo}>
                     <SvgFromUri
                         uri={plant.photo}
-                        height={150}
-                        width={150}
+                        height={88}
+                        width={78}
                     />
 
                     <Text style={styles.plantName}>
@@ -121,7 +129,8 @@ export function PlantSave() {
                         <DataTimePicker
                             value={selectedDateTime}
                             mode="time"
-                            display="compact"
+                            display="default"
+                            style={styles.dataTimePicker}
                             onChange={handelChangeTime}
                         />
                     )}
@@ -139,7 +148,7 @@ export function PlantSave() {
                     }
 
                     <Button
-                        title="Cadastrar planta"
+                        title="Confirmar alterações"
                         onPress={handleSave}
                     />
 
@@ -160,7 +169,7 @@ const styles = StyleSheet.create({
     plantInfo: {
         flex: 1,
         paddingHorizontal: 30,
-        paddingVertical: 50,
+        paddingVertical: 15,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: colors.shape
@@ -168,21 +177,22 @@ const styles = StyleSheet.create({
     controller: {
         backgroundColor: colors.white,
         paddingHorizontal: 20,
-        paddingTop: 20,
-        paddingBottom: getBottomSpace() || 20
+        paddingTop: 3,
+        paddingBottom: getBottomSpace() || 5
     },
     plantName: {
         fontFamily: fonts.heading,
         fontSize: 24,
         color: colors.heading,
-        marginTop: 15,
+        marginTop: 5,
     },
     plantAbout: {
         textAlign: 'center',
         fontFamily: fonts.text,
         color: colors.heading,
         fontSize: 17,
-        marginTop: 10
+        marginTop: 5,
+        marginBottom: 5
     }
     ,
     tipContainer: {
@@ -196,8 +206,8 @@ const styles = StyleSheet.create({
 
     }
     , tipIamge: {
-        width: 56,
-        height: 56,
+        width: 64,
+        height: 64,
     },
     tipText: {
         flex: 1,
@@ -211,21 +221,21 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: fonts.complement,
         color: colors.heading,
-        fontSize: 12,
+        fontSize: 17,
         marginTop: 5,
     },
     dataTimePicker: {
-
+        height: 128
     },
     dataTimePickerButton: {
         width: '100%',
         alignItems: 'center',
-        paddingVertical: 40
+        paddingVertical: 25
     },
     dataTimePickerText: {
         color: colors.heading,
         fontSize: 24,
         fontFamily: fonts.text
     }
-
+    ,
 })

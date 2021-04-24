@@ -15,10 +15,10 @@ const AuthRoutes = () => {
             tabBarOptions={{
                 activeTintColor: colors.green,
                 inactiveTintColor: colors.heading,
-                labelPosition: 'below-icon',
+                labelPosition: 'beside-icon',
                 style: {
-                    paddingVertical: Platform.OS === 'ios' ? 20 : 0,
-                    height: 88
+                    paddingVertical: Platform.OS === 'ios' ? 15 : 0,
+                    height: 48,
                 },
             }} >
 
@@ -37,7 +37,7 @@ const AuthRoutes = () => {
             />
 
             <AppTab.Screen
-                name="Minhas Plantas"
+                name="Minhas Plantinhas"
                 component={MyPlants}
                 options={{
                     tabBarIcon: (({ focused, color, size }) => (
