@@ -18,12 +18,9 @@ Technologies that I used to develop this web client
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-
 ## 💻 Getting started
 
-
 ### Requirements
-
 
 **Clone the project and access the folder**
 
@@ -35,7 +32,7 @@ $ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
 
 ```js
   # Go to project folder
-  cd nlw5-rn-plant-manger 
+  cd nlw5-rn-plant-manger
 
   # Install the dependencies
   $ yarn install
@@ -54,7 +51,7 @@ $ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
 ---
 
