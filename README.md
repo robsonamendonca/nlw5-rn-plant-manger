@@ -34,16 +34,20 @@ $ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
 **Follow the steps below for Web Version**
 
 ```js
-  # Go to src folder
-  cd _src 
+  # Go to project folder
+  cd nlw5-rn-plant-manger 
 
   # Install the dependencies
-  $ yarn
+  $ yarn install
 
   # Install expo on your phone
 
   # Start project
-  yarn start
+   1. start API
+     - json-server src/services/server.json --host ${YourIPLocal} --port 3333
+
+   2. start EXPO
+     - expo start
 
   # Open the project on your phone scanning the QR code
 ```
