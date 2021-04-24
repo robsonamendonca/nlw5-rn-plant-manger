@@ -28,7 +28,7 @@ Technologies that I used to develop this web client
 **Clone the project and access the folder**
 
 ```bash
-$ git clone https://github.com/robsonamendonca/PlantManager
+$ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
 ```
 
 **Follow the steps below for Web Version**
