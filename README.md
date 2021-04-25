@@ -22,6 +22,10 @@ Technologies that I used to develop this web client
 
 ### Requirements
 
+*** Star Setup
+
+[Setup PC/Laptop ](https://www.notion.so/Configura-es-do-ambiente-79e0e4c3e992462a9b11f2745b0f2785)
+
 **Clone the project and access the folder**
 
 ```bash
