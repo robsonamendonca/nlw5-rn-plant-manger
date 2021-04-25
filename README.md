@@ -1,4 +1,4 @@
-<img alt="Mockup" src="/assets/posts/capa.jpg">
+<img alt="Mockup" src="/assets/posts/cover.jpg">
 
 ## 💇🏻‍♂️ About the project
 
@@ -22,7 +22,7 @@ Technologies that I used to develop this web client
 
 ### Requirements
 
-***Start Setup
+**Start Setup
 
 💻 [Setup PC/Laptop ](https://www.notion.so/Configura-es-do-ambiente-79e0e4c3e992462a9b11f2745b0f2785)
 
@@ -45,7 +45,11 @@ $ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
 
   # Start project
    1. start API
-     - json-server src/services/server.json --host ${YourIPLocal} --port 3333
+     a) - edit file: \src\services\api.ts
+	   -- (line: 4) replace: baseURL: 'http://192.168.15.5:3333', to baseURL: 'http://YouIP:3333',
+
+     b) - json-server src/services/server.json --host 999.999.99.9 --port 3333 --delay 700
+           -- replace 999.999.99.9 to YouIP (example: 192.168.15.1)
 
    2. start EXPO
      - expo start
