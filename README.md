@@ -44,13 +44,20 @@ $ git clone https://github.com/robsonamendonca/nlw5-rn-plant-manger
   # Install expo on your phone
 
   # Start project
-   1. start API
+   1. start API:
+
      a) - edit file: \src\services\api.ts
-	   -- (line: 4) replace: baseURL: 'http://192.168.15.5:3333', to baseURL: 'http://YouIP:3333',
+	   -- (line: 4) replace: baseURL: 'http://192.168.15.5:3333', 
+              to 
+                                 baseURL: 'http://999.999.99.9:3333',
+ 
+           -- replace 999.999.99.9 to YourIP
 
      b) - json-server src/services/server.json --host 999.999.99.9 --port 3333 --delay 700
-           -- replace 999.999.99.9 to YouIP (example: 192.168.15.1)
+           -- replace 999.999.99.9 to YourIP
 
+   -- replace 999.999.99.9 to YourIP (example: 192.168.1.10)
+	
    2. start EXPO
      - expo start
 
