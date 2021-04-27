@@ -1,4 +1,4 @@
-<img alt="Mockup" src="/assets/posts/cover.jpg">
+<img alt="Mockup" src="/assets/posts/PlantManager_react_native.gif">
 
 ## 💇🏻‍♂️ About the project
 
