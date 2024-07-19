@@ -17,12 +17,16 @@ Technologies that I used to develop this web client
 
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Node.js 14](https://nodejs.org)
 
 ## 💻 Getting started
 
 ### Requirements
 
-**Start Setup
+>Caso estejam nas versões 14.16.0 e 6.14.11, respectivamente, (ou posterior) a atualização ocorreu com sucesso.
+
+
+**Start Setup**
 
 💻 [Setup PC/Laptop ](https://www.notion.so/Configura-es-do-ambiente-79e0e4c3e992462a9b11f2745b0f2785)
 
